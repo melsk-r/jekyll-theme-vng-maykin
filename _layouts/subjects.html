@@ -7,15 +7,14 @@ layout: default
 <section class="subject-list">
 
     {% capture url %}{{ page.url | replace: "index", "" }}{% endcapture %}
-<!--    {% assign children = site.content | where_exp:"other", "other.url contains url" | sort: "weight" | reverse  %} -->
-    {% assign children = site.content %}
+    {% assign children = site.content | where_exp:"other", "other.url contains url" | sort: "weight" | reverse  %}
 
-    {% if children.size > 0 %}
+<!--    {% if children.size > 0 %}
 
         {% for child in children %}
 
 
-<!--            {% assign remaining_path = child.url|split: url %}
+            {% assign remaining_path = child.url|split: url %}
             {% assign remaining_path = remaining_path[1] %}
             {% assign remaining_path_parts = remaining_path|split: '/' %}
 
@@ -47,10 +46,10 @@ layout: default
 
 
             {% if is_child or is_child_index %}
-                {% unless is_current_index %} -->
-                    <a href="{{ child.url | relative_url }}">{{ child.title | escaped }} - Robert</a>
-<!--                {% endunless %}
-            {% endif %} -->
+                {% unless is_current_index %} 
+                    <a href="{{ child.url | relative_url }}">{{ child.title | escaped }}</a>
+                {% endunless %}
+            {% endif %}
 
 
         {% endfor %}
@@ -64,5 +63,20 @@ layout: default
         {% endfor %}
 
 
-    {% endif %}
+    {% endif %} -->
+
+
+	{% assign pages = site.pages | sort:"weight"  %}
+	<ul>
+	  {% for p in pages %}
+		<li>
+		  <a {% if p.url == page.url %}class="active"{% endif %} href="{{ p.url }}">
+			{{ p.title }}
+		  </a>
+		</li>
+	  {% endfor %}
+	</ul>
 </section>
+
+
+
