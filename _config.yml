@@ -1,0 +1,40 @@
+title: Jekyll VNG theme
+
+description: >-
+   Jekyll version for gemma-zaken.
+
+plugins:
+  - jekyll-algolia
+  - jekyll-remote-theme
+
+remote_theme: michielverhoef/jekyll-vng-theme
+
+markdown: kramdown
+
+plugins:
+  - jekyll-redirect-from
+
+collections:
+  pages:
+    output: true
+  content:
+    output: true
+    permalink: /:path
+
+defaults:
+  - scope:
+      path: ''
+      type: pages
+    values:
+      layout: default
+  - scope:
+      path: ''
+      type: content
+    values:
+      layout: default
+
+sass:
+  load_paths:
+    - _sass
+
+github: VNG-Realisatie/gemma-zaken

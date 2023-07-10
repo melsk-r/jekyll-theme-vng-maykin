@@ -1,0 +1,15 @@
+<footer>
+    <script type="text/javascript" src="{{ "/assets/vendor/jquery/jquery.min.js" | relative_url }}"></script>
+    <script type="text/javascript" src="{{ "/assets/vendor/popper_js/popper.min.js" | relative_url }}"></script>
+    <script type="text/javascript" src="{{ "/assets/vendor/bootstrap/js/bootstrap.min.js" | relative_url }}"></script>
+    <script type="text/javascript" src="{{ "/assets/js/docsearch.min.js" | relative_url }}"></script>
+    <script>
+        docsearch({
+                appId: '{{ site.algolia.application_id }}',
+                apiKey: '{{ site.algolia.api_key }}',
+                indexName: '{{ site.algolia.index_name }}',
+                inputSelector: '#search-input',
+                debug: false 
+            });
+    </script>
+</footer>

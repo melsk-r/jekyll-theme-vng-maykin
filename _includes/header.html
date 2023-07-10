@@ -1,0 +1,90 @@
+{% capture navigation %}
+    {% assign sorted_navigation = site.data.navigation | sort: 'weight' %}
+    {% for nav in sorted_navigation %}
+        <li class="nav-item">
+            <a class="nav-link {% if nav.link == page.url %} active{% endif %}" href="{{ nav.link | relative_url }}">{{ nav.name }}</a>
+        </li>
+    {% endfor %}
+{% endcapture %}
+
+<header>
+        <!-- Only show on large viewports-->
+        <div class="d-none d-sm-none d-md-none d-lg-block">
+            <div class="container top-header">
+                <nav>
+                    <ul class="nav justify-content-end">
+                        {% for item in site.html_pages %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ item.url|relative_url }}">{{ item.title | escape }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>  
+
+                </nav>  
+            </div>
+
+            <div class="container main-header">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="{{"/"|relative_url}}">
+                        <img src="{{ "/assets/img/logo-leeg.png" | relative_url }}" title="Thumbs Up" alt="Thumbs Up">
+                    </a>
+
+                    <ul class="navbar-nav mr-auto">
+                        {{ navigation }}
+                    </ul>
+
+                    <!--<div class="search">-->
+                        <!--<input type="search" class="form-control" id="search-input" placeholder="Search..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0">-->
+                        <!--<div class="form-actions">-->
+                            <!--<button class="btn my-2 my-sm-0 btn-search" type="submit">Zoeken</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                </nav>
+            </div>
+
+        </div>
+
+        <!-- Only show on small viewports -->
+        <div class="d-lg-none d-xl-none nav-text-blue small-navigation">
+            <a href="{{"/"|relative_url}}">
+                <img src="{{ "/assets/img/logo-leeg.png" | relative_url }}" title="Zaakgericht Werken APIs" alt="Zaakgericht werken APIs">
+            </a>
+
+            <nav class="navbar bg-light-blue">
+                <button class="navbar-toggler menu-icon" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent">
+                    Menu
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+                    <div class="small-nav-header">
+
+                        <ul class="nav navbar-nav">
+                             {{ navigation }}
+                        </ul>
+                        
+                        <!--<div class="search mb-3">-->
+                            <!--<input type="search" class="form-control w-100" id="search-input" placeholder="Search..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0">-->
+                            <!--<div class="form-actions">-->
+                                <!--<button class="btn my-2 my-sm-0 btn-search" type="submit">Zoeken</button>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                    </div>
+
+                    <div class="small-nav-footer">
+                        <ul class="menu">
+                            {% for item in site.html_pages %}
+                                <li class="menu-item">
+                                    <a href="{{ item.url|relative_url }}">{{ item.title | escape }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+
+</header>
+

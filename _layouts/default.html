@@ -1,0 +1,43 @@
+{% include head.html %}
+<body>
+    {% include header.html %}
+    
+    <main>
+        <div>
+            {% include breadcrumb.html %}
+            <div class="page-header-img">
+                {% assign source = page.header-img | relative_url %}
+                <!-- img class="img-fluid d-block my-0 mx-auto" src="{% if source %}{{ source }}{% else %}{{ "/assets/img/banner-leeg.png" | relative_url }}{% endif %}" -->
+                <img class="img-fluid d-block my-0 mx-auto" height="1" width="1" src="{% if source %}{{ source }}{% else %}{{ "/img/sample-image.jpg" | relative_url }}{% endif %}">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                
+                <section class="layout-content col-12">
+                    <article class="page-content bg-light">
+                        <h1 class="page-title">{{ page.title }}</h1>
+                        {{ content }}
+                    </article>
+                </section>
+
+                {% include sidebar.html %}
+            </div>
+
+            {% if site.github %}
+
+                <div class="row">
+                     <section class="layout-content social-region col-12 col-md-8 px-5 py-5">
+                         <a href="https://github.com/{{ site.github }}" class="text-lowercase icon-" rel="noopener noreferrer">Github</a>
+                     </section>
+                 </div>
+
+            {% endif %}
+        </div>
+
+    </main>
+    {% include footer.html %}
+</body>
+
+</html>

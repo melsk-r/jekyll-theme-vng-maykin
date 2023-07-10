@@ -1,0 +1,9 @@
+node_modules/
+
+# Jekyll
+_site
+.sass-cache
+.jekyll-metadata
+
+# vscode
+.vscode/
