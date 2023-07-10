@@ -14,7 +14,7 @@ layout: default
         {% for child in children %}
 
 
-            {% assign remaining_path = child.url|split: url %}
+<!--            {% assign remaining_path = child.url|split: url %}
             {% assign remaining_path = remaining_path[1] %}
             {% assign remaining_path_parts = remaining_path|split: '/' %}
 
@@ -46,10 +46,10 @@ layout: default
 
 
             {% if is_child or is_child_index %}
-                {% unless is_current_index %}
-                    <a href="{{ child.url | relative_url }}">{{ child.title | escaped }}</a>
-                {% endunless %}
-            {% endif %}
+                {% unless is_current_index %} -->
+                    <a href="{{ child.url | relative_url }}">{{ child.title | escaped }} - Robert</a>
+<!--                {% endunless %}
+            {% endif %} -->
 
 
         {% endfor %}
