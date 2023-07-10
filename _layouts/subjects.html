@@ -70,7 +70,7 @@ layout: default
 		{% for i in page.folder_files %}
 		<li>
 		  <a href="{{ i.path | base_url }}">
-			{{ i.title }}
+			{{ i.title }} - {{ i.group }}
 		  </a>
 		</li>
 		{% endfor %}
