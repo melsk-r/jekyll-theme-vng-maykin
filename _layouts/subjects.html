@@ -65,14 +65,28 @@ layout: default
 
     {% endif %} -->
 
-
+	<h3>Versie 3.10</h3>
 	<ul>
 		{% for i in page.folder_files %}
-		<li>
-		  <a href="{{ i | base_url }}">
-			{{ i }}
-		  </a>
-		</li>
+			{% if i.group == '3.10' %}
+			<li>
+			  <a href="{{ i.path | base_url }}">
+				{{ i.title }}
+			  </a>
+			</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+	<h3>Versie 2.40</h3>
+	<ul>
+		{% for i in page.folder_files %}
+			{% if i.group == '2.40' %}
+			<li>
+			  <a href="{{ i.path | base_url }}">
+				{{ i.title }}
+			  </a>
+			</li>
+			{% endif %}
 		{% endfor %}
 	</ul>
 </section>
