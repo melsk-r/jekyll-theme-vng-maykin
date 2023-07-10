@@ -69,7 +69,7 @@ layout: default
 	<ul>
 		{% for i in page.folder_files %}
 		<li>
-		  <a {% if i.url == page.url %}class="active"{% endif %} href="{{ i.url | i }}">
+		  <a {% if i.url == page.url %}class="active"{% endif %} href="{{ i }}">
 			{{ i }}
 		  </a>
 		</li>
