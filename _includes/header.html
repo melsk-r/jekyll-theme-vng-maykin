@@ -1,5 +1,5 @@
 {% capture navigation %}
-    {% assign sorted_navigation = site.data.navigation | sort: 'weight' %}
+    {% assign sorted_navigation = site.data.my-navigation | sort: 'weight' %}
     {% for nav in sorted_navigation %}
         <li class="nav-item">
             <a class="nav-link {% if nav.link == page.url %} active{% endif %}" href="{{ nav.link | relative_url }}">{{ nav.name }}</a>
