@@ -69,8 +69,8 @@ layout: default
 	<ul>
 		{% for i in page.folder_files %}
 		<li>
-		  <a href="{{ i | base_url }}">
-			{{ i }}
+		  <a href="{{ i.title | base_url }}">
+			{{ i.title }}
 		  </a>
 		</li>
 		{% endfor %}
