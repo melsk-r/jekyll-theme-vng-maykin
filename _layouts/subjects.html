@@ -64,7 +64,20 @@ layout: default
 
 
     {% endif %} -->
-	<div>
+
+
+	<ul>
+		{% for i in page.folder_files %}
+		<li>
+		  <a href="{{ i | base_url }}">
+			{{ i }}
+		  </a>
+		</li>
+		{% endfor %}
+	</ul>
+	
+	
+<?x		<div>
 	<h3>Versie 3.10</h3>
 	<ul>
 		{% for i in page.folder_files %}
@@ -91,7 +104,8 @@ layout: default
 <!--			{% endif %} -->
 		{% endfor %}
 	</ul>
-	</div>
+	</div> ?>
+
 </section>
 
 
