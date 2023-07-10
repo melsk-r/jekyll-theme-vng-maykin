@@ -7,9 +7,9 @@ layout: default
 <section class="subject-list">
 
     {% capture url %}{{ page.url | replace: "index", "" }}{% endcapture %}
-    {% assign children = site.content | where_exp:"other", "other.url contains url" | sort: "weight" | reverse  %}
+<!--    {% assign children = site.content | where_exp:"other", "other.url contains url" | sort: "weight" | reverse  %}
 
-<!--    {% if children.size > 0 %}
+    {% if children.size > 0 %}
 
         {% for child in children %}
 
@@ -69,7 +69,7 @@ layout: default
 	<ul>
 		{% for i in page.folder_files %}
 		<li>
-		  <a {% if i.url == page.url %}class="active"{% endif %} href="{{ i }}">
+		  <a href="{{ i }}">
 			{{ i }}
 		  </a>
 		</li>
