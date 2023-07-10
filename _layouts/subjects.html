@@ -69,7 +69,7 @@ layout: default
 	<ul>
 		{% for i in page.folder_files %}
 		<li>
-		  <a href="{{ i }}">
+		  <a href="{{ i | relative_url }}">
 			{{ i }}
 		  </a>
 		</li>
